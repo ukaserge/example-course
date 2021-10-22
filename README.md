@@ -1,2 +1,8 @@
-# sample-courseware-repo
-Owner: Jacob Parr | This is the student-facing, public repo to which the sample-courseware-repo-source repo will publish to. Note: this repo is meant to remain private in that it is here for demonstration purposes - in normal cases, this repo would public
+# Sample Courseware Repo
+
+This repository contains the resources students need to follow along with the instructor teaching this course, in addition to the various labs and their solutions.
+
+There are two ways to get started (with and w/o Databricks Repos). Your instructor will indicate which procedure you should use and when.
+
+For your convenience, both procedures are documented for you at  
+<a href="https://www.databricks.training/step-by-step/importing-courseware-from-github" target="_blank">https&#58;//www.databricks.training/step-by-step/importing-courseware-from-github</a>.<br/>
