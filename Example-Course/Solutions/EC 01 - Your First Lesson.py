@@ -9,6 +9,7 @@
 
 # MAGIC %md
 # MAGIC # Your First Lesson
+# MAGIC ## Python Notebook
 # MAGIC 
 # MAGIC Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
@@ -18,7 +19,24 @@
 
 # COMMAND ----------
 
-print("Congratulations, you completed your first lesson!")
+# ANSWER
+text = "Hello Nurse!"
+print(text)
+
+# COMMAND ----------
+
+# MAGIC %scala
+# MAGIC println("This is Scala from a Python Notebook")
+
+# COMMAND ----------
+
+# MAGIC %r
+# MAGIC print("This is R from a Python Notebook")
+
+# COMMAND ----------
+
+# MAGIC %sql
+# MAGIC select 'This is SQL from a Python notebook'
 
 # COMMAND ----------
 

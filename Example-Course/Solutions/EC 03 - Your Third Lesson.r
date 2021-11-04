@@ -17,7 +17,24 @@
 
 # COMMAND ----------
 
-print("Congratulations, you completed your third lesson!")
+#  ANSWER
+text <- "Hello Nurse!"
+print(text)
+
+# COMMAND ----------
+
+# MAGIC %scala
+# MAGIC println("This is Scala from an R Notebook")
+
+# COMMAND ----------
+
+# MAGIC %python
+# MAGIC print("This is Python from an R Notebook")
+
+# COMMAND ----------
+
+# MAGIC %sql
+# MAGIC select 'This is SQL from an R Notebook'
 
 # COMMAND ----------
 
