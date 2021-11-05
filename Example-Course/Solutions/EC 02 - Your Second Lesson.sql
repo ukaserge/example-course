@@ -21,22 +21,38 @@
 
 -- ANSWER
 SET c.text = 'Hello Nurse!';
-SELECT ${c.text};
+SELECT ${c.text} AS name;
 
 -- COMMAND ----------
 
--- MAGIC %scala
+-- Arbitrary commment before directive
+-- DUMMY: Ya, that wasn't too smart. Then again, this is just a dummy-directive
+SELECT 'This is SQL from an SQL Notebook' AS comment
+
+-- COMMAND ----------
+
+-- MAGIC %scala // Arbitrary commment after magic command
+-- MAGIC // DUMMY: Ya, that wasn't too smart. Then again, this is just a dummy-directive
 -- MAGIC println("This is Scala from a SQL Notebook")
 
 -- COMMAND ----------
 
--- MAGIC %r
+-- MAGIC %r # Arbitrary commment after magic command
+-- MAGIC # DUMMY: Ya, that wasn't too smart. Then again, this is just a dummy-directive
 -- MAGIC print("This is R from a SQL Notebook")
 
 -- COMMAND ----------
 
--- MAGIC %python
+-- MAGIC %python # Arbitrary commment after magic command
+-- MAGIC # DUMMY: Ya, that wasn't too smart. Then again, this is just a dummy-directive
 -- MAGIC print("This is Python from a SQL Notebook")
+
+-- COMMAND ----------
+
+-- MAGIC %md -- Arbitrary commment after magic command
+-- MAGIC -- DUMMY: Ya, that wasn't too smart. Then again, this is just a dummy-directive
+-- MAGIC 
+-- MAGIC This is Markdown from a Python notebook
 
 -- COMMAND ----------
 

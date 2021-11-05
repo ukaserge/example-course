@@ -24,18 +24,34 @@ print(text)
 
 // COMMAND ----------
 
-// MAGIC %sql
-// MAGIC select 'This is SQL from a Scala notebook'
+// Arbitrary commment before directive
+// DUMMY
+println("This is Scala from a Scala Notebook")
 
 // COMMAND ----------
 
-// MAGIC %python
+// MAGIC %sql -- Arbitrary commment after magic command
+// MAGIC -- DUMMY
+// MAGIC select 'This is SQL from a Scala notebook' AS comment
+
+// COMMAND ----------
+
+// MAGIC %python # Arbitrary commment after magic command
+// MAGIC # DUMMY
 // MAGIC print("This is Python from a Scala Notebook")
 
 // COMMAND ----------
 
-// MAGIC %r
+// MAGIC %r # Arbitrary commment after magic command
+// MAGIC # DUMMY
 // MAGIC print("This is R from a Scala Notebook")
+
+// COMMAND ----------
+
+// MAGIC %md -- Arbitrary commment after magic command
+// MAGIC -- DUMMY
+// MAGIC 
+// MAGIC This is Markdown from a Python notebook
 
 // COMMAND ----------
 
