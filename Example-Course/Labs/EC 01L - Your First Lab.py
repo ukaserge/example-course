@@ -20,8 +20,19 @@
 # COMMAND ----------
 
 # TODO
+
 text = FILL_IN
+
 print(text)
+
+# COMMAND ----------
+
+# MAGIC %scala
+# MAGIC // TODO
+# MAGIC 
+# MAGIC // Add two numbers
+# MAGIC 
+# MAGIC 1 + FILL-IN
 
 # COMMAND ----------
 

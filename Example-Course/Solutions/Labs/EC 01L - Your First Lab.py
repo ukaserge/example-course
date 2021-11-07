@@ -25,6 +25,16 @@ print(text)
 
 # COMMAND ----------
 
+# MAGIC %scala
+# MAGIC 
+# MAGIC // ANSWER
+# MAGIC 
+# MAGIC // Add two numbers
+# MAGIC 
+# MAGIC 1+1
+
+# COMMAND ----------
+
 print("Congratulations, you completed your first lab!")
 
 # COMMAND ----------
