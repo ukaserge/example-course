@@ -8,45 +8,23 @@
 -- COMMAND ----------
 
 -- MAGIC %md
--- MAGIC # Your Second Lesson
--- MAGIC ## SQL Notebook
+-- MAGIC # Your Second Lab
 -- MAGIC 
 -- MAGIC Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 -- COMMAND ----------
 
--- MAGIC %run ./Includes/Classroom-Setup
+-- MAGIC %run ../Includes/Classroom-Setup
 
 -- COMMAND ----------
 
--- Arbitrary commment before directive
--- DUMMY: Ya, that wasn't too smart. Then again, this is just a dummy-directive
-SELECT 'This is SQL from an SQL Notebook' AS comment
+-- TODO
+SET text = FILLIN;
+SELECT text
 
 -- COMMAND ----------
 
--- MAGIC %scala // Arbitrary commment after magic command
--- MAGIC // DUMMY: Ya, that wasn't too smart. Then again, this is just a dummy-directive
--- MAGIC println("This is Scala from a SQL Notebook")
-
--- COMMAND ----------
-
--- MAGIC %r # Arbitrary commment after magic command
--- MAGIC # DUMMY: Ya, that wasn't too smart. Then again, this is just a dummy-directive
--- MAGIC print("This is R from a SQL Notebook")
-
--- COMMAND ----------
-
--- MAGIC %python # Arbitrary commment after magic command
--- MAGIC # DUMMY: Ya, that wasn't too smart. Then again, this is just a dummy-directive
--- MAGIC print("This is Python from a SQL Notebook")
-
--- COMMAND ----------
-
--- MAGIC %md -- Arbitrary commment after magic command
--- MAGIC -- DUMMY: Ya, that wasn't too smart. Then again, this is just a dummy-directive
--- MAGIC 
--- MAGIC This is Markdown from a Python notebook
+SELECT 'Congratulations, you completed your second lab!' AS message
 
 -- COMMAND ----------
 

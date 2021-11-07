@@ -19,6 +19,12 @@
 
 # COMMAND ----------
 
+# TODO
+text = FILL_IN
+print(text)
+
+# COMMAND ----------
+
 print("Congratulations, you completed your first lab!")
 
 # COMMAND ----------

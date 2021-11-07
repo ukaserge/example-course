@@ -17,12 +17,6 @@
 
 # COMMAND ----------
 
-# TODO
-text <- FILL_IN
-print(text)
-
-# COMMAND ----------
-
 # Arbitrary commment before directive
 # DUMMY
 print("This is R from an R Notebook")

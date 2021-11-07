@@ -17,12 +17,6 @@
 
 # COMMAND ----------
 
-#  ANSWER
-text <- "Hello Nurse!"
-print(text)
-
-# COMMAND ----------
-
 # Arbitrary commment before directive
 # DUMMY: Ya, that wasn't too smart. Then again, this is just a dummy-directive
 print("This is R from an R Notebook")

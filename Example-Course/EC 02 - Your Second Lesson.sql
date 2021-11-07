@@ -19,12 +19,6 @@
 
 -- COMMAND ----------
 
--- TODO
-SET text = FILLIN;
-SELECT text
-
--- COMMAND ----------
-
 -- Arbitrary commment before directive
 -- DUMMY
 SELECT 'This is SQL from an SQL Notebook' AS comment

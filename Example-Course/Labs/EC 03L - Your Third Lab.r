@@ -17,6 +17,12 @@
 
 # COMMAND ----------
 
+# TODO
+text <- FILL_IN
+print(text)
+
+# COMMAND ----------
+
 print("Congratulations, you completed your third lab!")
 
 # COMMAND ----------

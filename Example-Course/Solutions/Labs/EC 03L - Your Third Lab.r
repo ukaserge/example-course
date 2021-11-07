@@ -17,6 +17,12 @@
 
 # COMMAND ----------
 
+#  ANSWER
+text <- "Hello Nurse!"
+print(text)
+
+# COMMAND ----------
+
 print("Congratulations, you completed your third lab!")
 
 # COMMAND ----------

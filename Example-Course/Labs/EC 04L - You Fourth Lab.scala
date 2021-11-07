@@ -8,44 +8,27 @@
 // COMMAND ----------
 
 // MAGIC %md
-// MAGIC # Your Fourth Lesson
+// MAGIC # Your Fourth Lab
 // MAGIC 
 // MAGIC Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 // COMMAND ----------
 
-// MAGIC %run ./Includes/Classroom-Setup
+// MAGIC %run ../Includes/Classroom-Setup
 
 // COMMAND ----------
 
-// Arbitrary commment before directive
-// DUMMY
-println("This is Scala from a Scala Notebook")
+// TODO
+val text = FILL_IN
+print(text)
 
 // COMMAND ----------
 
-// MAGIC %sql -- Arbitrary commment after magic command
-// MAGIC -- DUMMY
-// MAGIC select 'This is SQL from a Scala notebook' AS comment
+assert(false, "Ya, this just isn't going to work for us tody")
 
 // COMMAND ----------
 
-// MAGIC %python # Arbitrary commment after magic command
-// MAGIC # DUMMY
-// MAGIC print("This is Python from a Scala Notebook")
-
-// COMMAND ----------
-
-// MAGIC %r # Arbitrary commment after magic command
-// MAGIC # DUMMY
-// MAGIC print("This is R from a Scala Notebook")
-
-// COMMAND ----------
-
-// MAGIC %md -- Arbitrary commment after magic command
-// MAGIC -- DUMMY
-// MAGIC 
-// MAGIC This is Markdown from a Python notebook
+println("Congratulations, you completed your fourth lab!")
 
 // COMMAND ----------
 

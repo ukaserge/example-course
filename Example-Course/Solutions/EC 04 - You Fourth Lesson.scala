@@ -18,12 +18,6 @@
 
 // COMMAND ----------
 
-// ANSWER
-val text = "Hello Nurse!"
-println(text)
-
-// COMMAND ----------
-
 // Arbitrary commment before directive
 // DUMMY: Ya, that wasn't too smart. Then again, this is just a dummy-directive
 println("This is Scala from a Scala Notebook")
