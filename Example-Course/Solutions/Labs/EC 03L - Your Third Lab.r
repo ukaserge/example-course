@@ -17,7 +17,7 @@
 
 # COMMAND ----------
 
-#  ANSWER
+# ANSWER
 text <- "Hello Nurse!"
 print(text)
 
