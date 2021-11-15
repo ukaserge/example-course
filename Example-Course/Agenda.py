@@ -10,16 +10,16 @@
 # MAGIC %md-sandbox
 # MAGIC We are not really doing anything special here short of documenting how to use replacements and showing off dbgems
 # MAGIC <pre>
-# MAGIC * AWS: {{AWS}}
-# MAGIC * username: {{username}}
-# MAGIC * spark_version: {{spark_version}}
-# MAGIC * instance_pool_id: {{instance_pool_id}}
-# MAGIC * host_name: {{host_name}}
-# MAGIC * username: {{username}}
-# MAGIC * notebook_path: {{notebook_path}}
-# MAGIC * notebook_dir: {{notebook_dir}}
-# MAGIC * api_endpoint: {{api_endpoint}}
-# MAGIC * api_token: {{api_token}}
+# MAGIC * cloud: AWS
+# MAGIC * username: jacob.parr@databricks.com
+# MAGIC * spark_version: 9.1.x-scala2.12
+# MAGIC * instance_pool_id: 0716-152841-glint89-pool-yb6riZeC
+# MAGIC * host_name: 1012-154940-lance480-10-181-250-31
+# MAGIC * username: jacob.parr@databricks.com
+# MAGIC * notebook_path: /Repos/Published/example-course-source/Build-Scripts/Publish-IL-All
+# MAGIC * notebook_dir: /Repos/Published/example-course-source/Build-Scripts
+# MAGIC * api_endpoint: https://oregon.cloud.databricks.com
+# MAGIC * api_token: dkea2c610e4af51f21047411f40ef04a2b5f
 # MAGIC </pre>
 
 # COMMAND ----------
