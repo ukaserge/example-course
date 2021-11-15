@@ -11,15 +11,15 @@
 # MAGIC We are not really doing anything special here short of documenting how to use replacements and showing off dbgems
 # MAGIC <pre>
 # MAGIC * AWS: {{AWS}}
-# MAGIC * jacob.parr@databricks.com: {{jacob.parr@databricks.com}}
-# MAGIC * 9.1.x-scala2.12: {{9.1.x-scala2.12}}
-# MAGIC * 0716-152841-glint89-pool-yb6riZeC: {{0716-152841-glint89-pool-yb6riZeC}}
-# MAGIC * 1012-154940-lance480-10-181-241-60: {{1012-154940-lance480-10-181-241-60}}
-# MAGIC * jacob.parr@databricks.com: {{jacob.parr@databricks.com}}
-# MAGIC * /Repos/Published/example-course-source/Build-Scripts/Publish-IL-All (Verbose): {{/Repos/Published/example-course-source/Build-Scripts/Publish-IL-All (Verbose)}}
-# MAGIC * /Repos/Published/example-course-source/Build-Scripts: {{/Repos/Published/example-course-source/Build-Scripts}}
-# MAGIC * https://oregon.cloud.databricks.com: {{https://oregon.cloud.databricks.com}}
-# MAGIC * dkea129b15b7d8e23c6d79917df0ed3b3add: {{dkea129b15b7d8e23c6d79917df0ed3b3add}}
+# MAGIC * username: {{username}}
+# MAGIC * spark_version: {{spark_version}}
+# MAGIC * instance_pool_id: {{instance_pool_id}}
+# MAGIC * host_name: {{host_name}}
+# MAGIC * username: {{username}}
+# MAGIC * notebook_path: {{notebook_path}}
+# MAGIC * notebook_dir: {{notebook_dir}}
+# MAGIC * api_endpoint: {{api_endpoint}}
+# MAGIC * api_token: {{api_token}}
 # MAGIC </pre>
 
 # COMMAND ----------
