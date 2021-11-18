@@ -13,13 +13,13 @@
 # MAGIC * cloud: AWS
 # MAGIC * username: jacob.parr@databricks.com
 # MAGIC * spark_version: 9.1.x-scala2.12
-# MAGIC * instance_pool_id: 0716-152841-glint89-pool-yb6riZeC
-# MAGIC * host_name: 1012-154940-lance480-10-181-250-31
+# MAGIC * instance_pool_id: 1117-212409-soars13-pool-6plxsi6q
+# MAGIC * host_name: 1117-212444-7o693v9s-10-141-230-154
 # MAGIC * username: jacob.parr@databricks.com
-# MAGIC * notebook_path: /Repos/Published/example-course-source/Build-Scripts/Publish-IL-All
-# MAGIC * notebook_dir: /Repos/Published/example-course-source/Build-Scripts
+# MAGIC * notebook_path: /Repos/Instructor-Led Source/example-course-source/Build-Scripts/Publish-IL-All-Verbose
+# MAGIC * notebook_dir: /Repos/Instructor-Led Source/example-course-source/Build-Scripts
 # MAGIC * api_endpoint: https://oregon.cloud.databricks.com
-# MAGIC * api_token: dkea2c610e4af51f21047411f40ef04a2b5f
+# MAGIC * api_token: dkeab7f6ef3aa134a6bdbd4d73e3dc9fdc3d
 # MAGIC </pre>
 
 # COMMAND ----------
