@@ -14,13 +14,13 @@
 
 -- COMMAND ----------
 
--- MAGIC %run ../Includes/Classroom-Setup
+-- MAGIC %run ../Includes/Classroom-Setup-02L
 
 -- COMMAND ----------
 
--- ANSWER
-SET c.text = 'Hello Nurse!';
-SELECT ${c.text} AS name;
+-- TODO
+SET text = FILLIN;
+SELECT text
 
 -- COMMAND ----------
 

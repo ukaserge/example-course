@@ -14,12 +14,12 @@
 # MAGIC * username: jacob.parr@databricks.com
 # MAGIC * spark_version: 9.1.x-scala2.12
 # MAGIC * instance_pool_id: 1117-212409-soars13-pool-6plxsi6q
-# MAGIC * host_name: 1117-212444-7o693v9s-10-141-251-123
+# MAGIC * host_name: 1117-212444-7o693v9s-10-141-232-118
 # MAGIC * username: jacob.parr@databricks.com
 # MAGIC * notebook_path: /Repos/Examples/example-il-course-source/Build-Scripts/Publish-All
 # MAGIC * notebook_dir: /Repos/Examples/example-il-course-source/Build-Scripts
 # MAGIC * api_endpoint: https://oregon.cloud.databricks.com
-# MAGIC * api_token: dkeaaeddcaaea17ae2a9c691988d3822c160
+# MAGIC * api_token: dkea0a677ec5bbae9d3e5d793eec102b2d63
 # MAGIC </pre>
 
 # COMMAND ----------
@@ -27,16 +27,25 @@
 # MAGIC %md
 # MAGIC # Here is a quick index
 # MAGIC ## Lessons
-# MAGIC * [Your First Lesson]($./EC 01 - Your First Lesson)
-# MAGIC * [Your Second Lesson]($./EC 02 - Your Second Lesson)
-# MAGIC * [Your Third Lesson]($./EC 03 - Your Third Lesson)
-# MAGIC * [Your Fourth Lesson]($./EC 04 - Your Fourth Lesson)
+# MAGIC * [Your First Lesson]($./EILC 01 - Your First Lesson)
+# MAGIC * [Your Second Lesson]($./EILC 02 - Your Second Lesson)
+# MAGIC * [Your Third Lesson]($./EILC 03 - Your Third Lesson)
+# MAGIC * [Your Fourth Lesson]($./EILC 04 - You Fourth Lesson)
 # MAGIC 
 # MAGIC ## Labs
-# MAGIC * [Your First Lab]($./Labs/EC 01L - Your First Lab)
-# MAGIC * [Your Second Lab]($./Labs/EC 02L - Your Second Lab)
-# MAGIC * [Your Third Lab]($./Labs/EC 03L - Your Third Lab)
-# MAGIC * [Your Fourth Lab]($./Labs/EC 04L - You Fourth Lab)
+# MAGIC * [Your First Lab]($./Labs/EILC 01L - Your First Lab)
+# MAGIC * [Your Second Lab]($./Labs/EILC 02L - Your Second Lab)
+# MAGIC * [Your Third Lab]($./Labs/EILC 03L - Your Third Lab)
+# MAGIC * [Your Fourth Lab]($./Labs/EILC 04L - You Fourth Lab)
+
+# COMMAND ----------
+
+# MAGIC %md
+# MAGIC This is a [MD Link]("https://example.com") that the publisher should catch.
+# MAGIC 
+# MAGIC This is a <a href="https://example.com" target="top">HTML Link</a> that is missing the **`target="\_blank"`** argument.
+# MAGIC 
+# MAGIC This is a <a href="https://example.com" target="_blank">HTML Link</a> that has the required **`target="\_blank"`** argument.
 
 # COMMAND ----------
 

@@ -15,33 +15,43 @@
 
 # COMMAND ----------
 
-# MAGIC %run ../Includes/Classroom-Setup
+# MAGIC %run ../Includes/Classroom-Setup-01L
 
 # COMMAND ----------
 
-# ANSWER
-text = "Hello Nurse!"
+# TODO
+
+text = FILL_IN
+
 print(text)
 
 # COMMAND ----------
 
 # MAGIC %scala
-# MAGIC // ANSWER
+# MAGIC // TODO
 # MAGIC 
 # MAGIC // Add two numbers
 # MAGIC 
-# MAGIC 1+1
+# MAGIC 1 + FILL-IN
 
 # COMMAND ----------
 
 # MAGIC %sql
-# MAGIC -- ANSWER
+# MAGIC -- TODO
 # MAGIC 
-# MAGIC SELECT current_user()
+# MAGIC SELECT
+# MAGIC    <FILL-IN>
 
 # COMMAND ----------
 
 print("Congratulations, you completed your first lab!")
+
+# COMMAND ----------
+
+# MAGIC %md
+# MAGIC A working link back to our [Agenda]($../Agenda) from a subdirectory.
+# MAGIC 
+# MAGIC Note: it's common to provide a link back to the agenda or notebook but not a requirement. Include here for testing.
 
 # COMMAND ----------
 
