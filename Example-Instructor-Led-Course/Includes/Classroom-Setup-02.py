@@ -1,5 +1,5 @@
 # Databricks notebook source
-# MAGIC %run ./_databricks-academy-helper $lesson="01"
+# MAGIC %run ./_databricks-academy-helper $lesson="02"
 
 # COMMAND ----------
 

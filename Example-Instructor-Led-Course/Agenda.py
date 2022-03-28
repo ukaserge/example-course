@@ -7,20 +7,24 @@
 
 # COMMAND ----------
 
+# MAGIC %md # Build-Time Substitutions
+
+# COMMAND ----------
+
 # MAGIC %md-sandbox
 # MAGIC We are not really doing anything special here short of documenting how to use replacements and showing off dbgems
 # MAGIC <pre>
 # MAGIC * cloud: AWS
 # MAGIC * username: jacob.parr@databricks.com
-# MAGIC * spark_version: 9.1.x-scala2.12
+# MAGIC * spark_version: 10.4.x-scala2.12
 # MAGIC * instance_pool_id: 1117-212409-soars13-pool-6plxsi6q
-# MAGIC * host_name: 1117-212444-7o693v9s-10-141-232-118
+# MAGIC * host_name: 1117-212444-7o693v9s-10-141-224-129
 # MAGIC * username: jacob.parr@databricks.com
 # MAGIC * notebook_path: /Repos/Examples/example-il-course-source/Build-Scripts/Publish-All
 # MAGIC * notebook_dir: /Repos/Examples/example-il-course-source/Build-Scripts
 # MAGIC * api_endpoint: https://oregon.cloud.databricks.com
-# MAGIC * api_token: dkea0a677ec5bbae9d3e5d793eec102b2d63
-# MAGIC </pre>
+# MAGIC * api_token: dkeab637be177544d25ee6ee108d02dbfcb0
+# MAGIC </pre>  
 
 # COMMAND ----------
 

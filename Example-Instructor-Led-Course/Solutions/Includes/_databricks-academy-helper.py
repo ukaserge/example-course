@@ -1,4 +1,6 @@
 # Databricks notebook source
+# You may or may not want to use a Paths object, but it is a
+# nice way to organize what would otherwise be dozens of hard-coded paths
 class Paths():
     def __init__(self, working_dir, clean_lesson):
         self.working_dir = working_dir
@@ -28,8 +30,8 @@ class DBAcademyHelper():
 
         self.start = int(time.time())
         
-        self.course_name = "adewd"
-        self.lesson = lesson.lower()
+        self.course_name = "eilc"
+        self.lesson = None if lesson is None else lesson.lower()
         self.data_source_uri = "wasbs://courseware@dbacademy.blob.core.windows.net/advanced-data-engineering-with-databricks/v01"
 
         # Define username
@@ -106,6 +108,8 @@ dbutils.widgets.text("lesson", "missing")
 lesson = dbutils.widgets.get("lesson")
 if lesson == "none": lesson = None
 assert lesson != "missing", f"The lesson must be passed to the DBAcademyHelper"
+
+# lesson = dbutils.entry_point.getDbutils().notebook().getContext().notebookPath().getOrElse(None).split("/")[-1]
 
 DA = DBAcademyHelper(lesson)
 

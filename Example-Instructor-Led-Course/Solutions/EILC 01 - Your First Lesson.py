@@ -30,28 +30,32 @@
 # COMMAND ----------
 
 print(DA)
-print(DBAcademy)
 
 # COMMAND ----------
 
-print(f"DBAcademy.user_db:         {DBAcademy.user_db}")
-print(f"DBAcademy.working_dir:     {DBAcademy.working_dir}")
+print(f"DA.db_name:           {DA.db_name}")
 print("-"*80)
-print(f"DA.paths.working_dir:      {DA.paths.working_dir}")
-print(f"DA.paths.people_with_dups: {DA.paths.people_with_dups}")
+print(f"DA.paths.user_db:     {DA.paths.user_db}")
+print(f"DA.paths.working_dir: {DA.paths.working_dir}")
+print(f"DA.paths.magic_tbl:   {DA.paths.magic_tbl}")
 
 # COMMAND ----------
 
 # MAGIC %sql
 # MAGIC SELECT 
-# MAGIC   '${da.user_db}' as user_db,
-# MAGIC   '${da.working_dir}' as working_dir,
-# MAGIC   '${da.paths.people_with_dups}' as some_path
+# MAGIC   '${da.db_name}' as db_name,
+# MAGIC   '${da.paths.working_dir}' as working_dir,
+# MAGIC   '${da.paths.user_db}' as user_db,
+# MAGIC   '${da.paths.magic_tbl}' as magic_tbl
+
+# COMMAND ----------
+
+DA.install_datasets(reinstall=False)
 
 # COMMAND ----------
 
 # MAGIC %sql
-# MAGIC SELECT * FROM text.`${da.paths.people_with_dups}`;
+# MAGIC SELECT * FROM delta.`${da.paths.magic_tbl}`;
 
 # COMMAND ----------
 
