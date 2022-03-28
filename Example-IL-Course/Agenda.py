@@ -23,7 +23,6 @@
 # MAGIC * notebook_path: /Repos/Examples/example-il-course-source/Build-Scripts/Publish-All
 # MAGIC * notebook_dir: /Repos/Examples/example-il-course-source/Build-Scripts
 # MAGIC * api_endpoint: https://oregon.cloud.databricks.com
-# MAGIC * api_token: dkeab637be177544d25ee6ee108d02dbfcb0
 # MAGIC </pre>  
 
 # COMMAND ----------
