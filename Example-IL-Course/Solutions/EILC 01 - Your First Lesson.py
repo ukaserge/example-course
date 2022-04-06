@@ -8,7 +8,7 @@
 # COMMAND ----------
 
 # MAGIC %md
-# MAGIC # Your First Lesson
+# MAGIC # Your Nth Lesson
 # MAGIC Using Classroom-Setup
 # MAGIC 
 # MAGIC This lesson demonstrates the class "Classroom-Setup" strategy when a more complex/custom setup is required compared to the **`DBAcademyHelper`** installed from GitHub.
