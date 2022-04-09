@@ -8,6 +8,7 @@
 -- COMMAND ----------
 
 -- MAGIC %md
+-- MAGIC 
 -- MAGIC # Your Second Lesson
 -- MAGIC ## SQL Notebook
 -- MAGIC 
@@ -25,25 +26,26 @@ SELECT 'This is SQL from an SQL Notebook' AS comment
 
 -- COMMAND ----------
 
--- MAGIC %scala // Arbitrary commment after magic command
+-- MAGIC %scala
 -- MAGIC // DUMMY
 -- MAGIC println("This is Scala from a SQL Notebook")
 
 -- COMMAND ----------
 
--- MAGIC %r # Arbitrary commment after magic command
+-- MAGIC %r
 -- MAGIC # DUMMY
 -- MAGIC print("This is R from a SQL Notebook")
 
 -- COMMAND ----------
 
--- MAGIC %python # Arbitrary commment after magic command
+-- MAGIC %python
 -- MAGIC # DUMMY
 -- MAGIC print("This is Python from a SQL Notebook")
 
 -- COMMAND ----------
 
--- MAGIC %md -- Arbitrary commment after magic command
+-- MAGIC %md
+-- MAGIC 
 -- MAGIC -- DUMMY
 -- MAGIC 
 -- MAGIC This is Markdown from a Python notebook

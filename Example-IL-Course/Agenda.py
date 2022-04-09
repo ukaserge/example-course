@@ -7,27 +7,31 @@
 
 # COMMAND ----------
 
-# MAGIC %md # Build-Time Substitutions
+# MAGIC %md
+# MAGIC 
+# MAGIC # Build-Time Substitutions
 
 # COMMAND ----------
 
 # MAGIC %md-sandbox
+# MAGIC 
 # MAGIC We are not really doing anything special here short of documenting how to use replacements and showing off dbgems
 # MAGIC <pre>
 # MAGIC * cloud: AWS
 # MAGIC * username: jacob.parr@databricks.com
 # MAGIC * spark_version: 10.4.x-scala2.12
 # MAGIC * instance_pool_id: 1117-212409-soars13-pool-6plxsi6q
-# MAGIC * host_name: 1117-212444-7o693v9s-10-141-224-218
+# MAGIC * host_name: 1117-212444-7o693v9s-10-141-227-234
 # MAGIC * username: jacob.parr@databricks.com
 # MAGIC * notebook_path: /Repos/Examples/example-il-course-source/Build-Scripts/Publish-All
 # MAGIC * notebook_dir: /Repos/Examples/example-il-course-source/Build-Scripts
 # MAGIC * api_endpoint: https://oregon.cloud.databricks.com
-# MAGIC </pre>  
+# MAGIC </pre>
 
 # COMMAND ----------
 
 # MAGIC %md
+# MAGIC 
 # MAGIC # Here is a quick index
 # MAGIC ## Lessons
 # MAGIC * [Your First Lesson]($./EILC 01 - Your First Lesson)
@@ -44,6 +48,7 @@
 # COMMAND ----------
 
 # MAGIC %md
+# MAGIC 
 # MAGIC This is a [MD Link]("https://example.com") that the publisher should catch.
 # MAGIC 
 # MAGIC This is a <a href="https://example.com" target="top">HTML Link</a> that is missing the **`target="\_blank"`** argument.

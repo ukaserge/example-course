@@ -7,11 +7,12 @@
 
 # COMMAND ----------
 
-# MAGIC %md # Project Information
+# MAGIC %md
+# MAGIC # Project Information
 # MAGIC 
 # MAGIC * Name: **Example Course**
-# MAGIC * Version:  **1.0.4**
-# MAGIC * Built On: **Apr 6, 2022 at 22:11:55 UTC**
+# MAGIC * Version:  **1.0.5**
+# MAGIC * Built On: **Apr 9, 2022 at 01:37:01 UTC**
 
 # COMMAND ----------
 

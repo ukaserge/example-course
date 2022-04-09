@@ -8,6 +8,7 @@
 // COMMAND ----------
 
 // MAGIC %md
+// MAGIC 
 // MAGIC # Your Fourth Lesson
 // MAGIC 
 // MAGIC Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
@@ -24,25 +25,26 @@ println("This is Scala from a Scala Notebook")
 
 // COMMAND ----------
 
-// MAGIC %sql -- Arbitrary commment after magic command
+// MAGIC %sql
 // MAGIC -- DUMMY: Ya, that wasn't too smart. Then again, this is just a dummy-directive
 // MAGIC select 'This is SQL from a Scala notebook' AS comment
 
 // COMMAND ----------
 
-// MAGIC %python # Arbitrary commment after magic command
+// MAGIC %python
 // MAGIC # DUMMY: Ya, that wasn't too smart. Then again, this is just a dummy-directive
 // MAGIC print("This is Python from a Scala Notebook")
 
 // COMMAND ----------
 
-// MAGIC %r # Arbitrary commment after magic command
+// MAGIC %r
 // MAGIC # DUMMY: Ya, that wasn't too smart. Then again, this is just a dummy-directive
 // MAGIC print("This is R from a Scala Notebook")
 
 // COMMAND ----------
 
-// MAGIC %md -- Arbitrary commment after magic command
+// MAGIC %md
+// MAGIC 
 // MAGIC -- DUMMY: Ya, that wasn't too smart. Then again, this is just a dummy-directive
 // MAGIC 
 // MAGIC This is Markdown from a Python notebook

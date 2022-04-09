@@ -8,6 +8,7 @@
 # COMMAND ----------
 
 # MAGIC %md
+# MAGIC 
 # MAGIC # Your Nth Lesson
 # MAGIC Using Classroom-Setup
 # MAGIC 
@@ -25,7 +26,9 @@
 
 # COMMAND ----------
 
-# MAGIC %md For better obfuscation, readability and teachability, everything is wrapped in a **`DBAcademyHelper`** object and two instances are provided by default, **`DBAcademy`** and **`DA`** for a shorter command string
+# MAGIC %md
+# MAGIC 
+# MAGIC For better obfuscation, readability and teachability, everything is wrapped in a **`DBAcademyHelper`** object and two instances are provided by default, **`DBAcademy`** and **`DA`** for a shorter command string
 
 # COMMAND ----------
 
@@ -59,7 +62,9 @@ DA.install_datasets(reinstall=False)
 
 # COMMAND ----------
 
-# MAGIC %md # Testing
+# MAGIC %md
+# MAGIC 
+# MAGIC # Testing
 # MAGIC The remainder of this notebook demonstrates different build patterns, processing commands or in general is added for the sake of testing the build and testing tools
 
 # COMMAND ----------
@@ -70,25 +75,26 @@ print("This is Python from an Python Notebook")
 
 # COMMAND ----------
 
-# MAGIC %scala // Arbitrary commment after magic command
+# MAGIC %scala
 # MAGIC // DUMMY: Ya, that wasn't too smart. Then again, this is just a dummy-directive
 # MAGIC println("This is Scala from a Python Notebook")
 
 # COMMAND ----------
 
-# MAGIC %r # Arbitrary commment after magic command
+# MAGIC %r
 # MAGIC # DUMMY: Ya, that wasn't too smart. Then again, this is just a dummy-directive
 # MAGIC print("This is R from a Python Notebook")
 
 # COMMAND ----------
 
-# MAGIC %sql -- Arbitrary commment after magic command
+# MAGIC %sql
 # MAGIC -- DUMMY: Ya, that wasn't too smart. Then again, this is just a dummy-directive
 # MAGIC SELECT 'This is SQL from a Python notebook' AS comment
 
 # COMMAND ----------
 
-# MAGIC %md -- Arbitrary commment after magic command
+# MAGIC %md
+# MAGIC 
 # MAGIC -- DUMMY: Ya, that wasn't too smart. Then again, this is just a dummy-directive
 # MAGIC 
 # MAGIC This is Markdown from a Python notebook
@@ -96,6 +102,7 @@ print("This is Python from an Python Notebook")
 # COMMAND ----------
 
 # MAGIC %md
+# MAGIC 
 # MAGIC Remove our any temporary files and the database created in this lesson
 
 # COMMAND ----------

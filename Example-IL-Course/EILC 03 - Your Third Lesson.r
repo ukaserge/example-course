@@ -7,7 +7,9 @@
 
 # COMMAND ----------
 
-# MAGIC %md # Your Third Lesson
+# MAGIC %md
+# MAGIC 
+# MAGIC # Your Third Lesson
 # MAGIC 
 # MAGIC Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
@@ -23,25 +25,26 @@ print("This is R from an R Notebook")
 
 # COMMAND ----------
 
-# MAGIC %scala // Arbitrary commment after magic command
+# MAGIC %scala
 # MAGIC // DUMMY
 # MAGIC println("This is Scala from an R Notebook")
 
 # COMMAND ----------
 
-# MAGIC %python # Arbitrary commment after magic command
+# MAGIC %python
 # MAGIC # DUMMY
 # MAGIC print("This is Python from an R Notebook")
 
 # COMMAND ----------
 
-# MAGIC %sql -- Arbitrary commment after magic command
+# MAGIC %sql
 # MAGIC -- DUMMY
 # MAGIC SELECT 'This is SQL from an R Notebook' AS comment
 
 # COMMAND ----------
 
-# MAGIC %md -- Arbitrary commment after magic command
+# MAGIC %md
+# MAGIC 
 # MAGIC -- DUMMY
 # MAGIC 
 # MAGIC This is Markdown from a Python notebook

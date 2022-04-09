@@ -1,5 +1,6 @@
 # Databricks notebook source
 # MAGIC %md
+# MAGIC 
 # MAGIC Resets the environment removing any directories and or tables created during course execution
 
 # COMMAND ----------

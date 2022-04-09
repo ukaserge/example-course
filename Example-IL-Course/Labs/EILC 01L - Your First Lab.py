@@ -8,6 +8,7 @@
 # COMMAND ----------
 
 # MAGIC %md
+# MAGIC 
 # MAGIC # Your First Lab
 # MAGIC 
 # MAGIC 
@@ -49,6 +50,7 @@ print("Congratulations, you completed your first lab!")
 # COMMAND ----------
 
 # MAGIC %md
+# MAGIC 
 # MAGIC A working link back to our [Agenda]($../Agenda) from a subdirectory.
 # MAGIC 
 # MAGIC Note: it's common to provide a link back to the agenda or notebook but not a requirement. Include here for testing.
