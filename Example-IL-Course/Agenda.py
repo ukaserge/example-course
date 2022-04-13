@@ -21,7 +21,7 @@
 # MAGIC * username: jacob.parr@databricks.com
 # MAGIC * spark_version: 10.4.x-scala2.12
 # MAGIC * instance_pool_id: 1117-212409-soars13-pool-6plxsi6q
-# MAGIC * host_name: 1117-212444-7o693v9s-10-141-227-234
+# MAGIC * host_name: 1117-212444-7o693v9s-10-141-232-138
 # MAGIC * username: jacob.parr@databricks.com
 # MAGIC * notebook_path: /Repos/Examples/example-il-course-source/Build-Scripts/Publish-All
 # MAGIC * notebook_dir: /Repos/Examples/example-il-course-source/Build-Scripts
