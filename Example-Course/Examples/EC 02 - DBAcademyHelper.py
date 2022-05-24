@@ -91,7 +91,7 @@ print(f"DA.paths.magic_tbl:   {DA.paths.magic_tbl}")
 
 # COMMAND ----------
 
-DA.install_datasets(reinstall=True)
+DA.install_datasets(reinstall=False)
 
 # COMMAND ----------
 

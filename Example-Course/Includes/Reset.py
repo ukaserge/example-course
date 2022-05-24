@@ -3,11 +3,9 @@
 
 # COMMAND ----------
 
+# Define only so that we can reference known variables, 
+# not actually invoking anything other functions.
 DA = DBAcademyHelper()
-
-# COMMAND ----------
-
-import re
 
 # Remove all databases associated with this course
 rows = spark.sql("SHOW DATABASES").collect()

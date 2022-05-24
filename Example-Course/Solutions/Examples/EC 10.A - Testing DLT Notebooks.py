@@ -11,11 +11,17 @@
 # MAGIC 
 # MAGIC # Testing DLT Notebooks
 # MAGIC 
-# MAGIC Coming soon... this notebook will demonstrate how to author and test Delta Live Tables.
+# MAGIC This pattern has the following key elements:
+# MAGIC * **`DA.get_pipeline_config()`**: This is the common piece of code used by the print and create operations.
+# MAGIC * **`DA.print_pipeline_config()`**: Prints user-specific instructions. These instructions are critical to avoiding conflicts with user resources and dealing with requirements like unique names.
+# MAGIC * **`DA.create_pipeline()`**: Creates the pipline for the user. This is the first 1/2 that enables the pipline to be tested and when put in an **`# ANSWER`** cell, it creates a Solutions notebook that enables users to complete the exercise without actually doing the manual config.
+# MAGIC * **`DA.start_pipeline()`**: Starts the pipline for the user. This is the second 1/2 that enables the pipline to be tested and when put in an **`# ANSWER`** cell, it creates a Solutions notebook that enables users to complete the exercise without explicitly starting it.
+# MAGIC 
+# MAGIC The definition for each of these can be found in [Classroom-Setup-10]($../Includes/Classroom-Setup-10) and [_pipeline_config]($../Includes/_pipeline_config)
 
 # COMMAND ----------
 
-# MAGIC %run ../Includes/Classroom-Setup-06
+# MAGIC %run ../Includes/Classroom-Setup-10
 
 # COMMAND ----------
 
@@ -60,8 +66,8 @@ DA.print_pipeline_config()
 
 # ANSWER
 
-# This function is provided for students who do not or cannot
-# want to work through the exercise of creating the pipeline.
+# This function is provided for students who do not want to
+# or cannot work through the exercise of creating the pipeline.
 DA.create_pipeline()
 
 # This function is provided to start the pipeline and block 

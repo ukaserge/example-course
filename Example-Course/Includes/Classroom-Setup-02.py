@@ -22,12 +22,12 @@ LOCATION '{DA.paths.magic_tbl}'
 
 # COMMAND ----------
 
-DA = DBAcademyHelper()   # Create the DA object with the specified lesson
-DA.cleanup()             # Remove the existing database and files
-DA.init(create_db=True)  # True is the default
-DA.install_datasets()    # Install (if necissary) and validate the datasets
+DA = DBAcademyHelper()      # Create the DA object with the specified lesson
+DA.cleanup(validate=False)  # Remove the existing database and files
+DA.init(create_db=True)     # True is the default
+DA.install_datasets()       # Install (if necissary) and validate the datasets
 
-_create_magic_table()    # A lesson-specific utility method to create and load a table.
+_create_magic_table()       # A lesson-specific utility method to create and load a table.
 
-DA.conclude_setup()      # Conclude the setup by printing the DA object's final state
+DA.conclude_setup()         # Conclude the setup by printing the DA object's final state
 
