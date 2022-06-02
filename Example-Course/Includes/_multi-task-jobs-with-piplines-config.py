@@ -1,16 +1,4 @@
 # Databricks notebook source
-# Normally this logic would be in a specific classroom-setup file if used by only one lesson or in _utility-funtions if used by multiple.
-# In this case, it is refactored into a sepearte notebook to make the concepts/patterns easier to understand.
-
-# In order to provide a more robust example, we are including here the Pipeline Config so that we can
-# include in this job one task for the pipeline
-
-# COMMAND ----------
-
-# MAGIC %run ./_pipeline_config
-
-# COMMAND ----------
-
 class TaskConfig():
     def __init__(self, name, resource_type, resource, pipeline_id=None, depends_on=[], cluster="shared_cluster"):
         self.name = name
@@ -36,7 +24,7 @@ def get_job_config(self):
     
     da_name, da_hash = DA.get_username_hash()
     job_name = f"da-{da_name}-{da_hash}-{self.course_code.lower()}: Example Job w/Pipeline"
-    pipeline_name = f"da-{da_name}-{da_hash}-{DA.course_code.lower()}: Example Pipeline"
+    pipeline_name = self.get_pipeline_config().pipeline_name
 
     # will only exist if the pipline was created programatically
     try: pipeline_id = DA.pipeline_id
@@ -59,7 +47,7 @@ def get_job_config(self):
                    resource=f"{base_path}/EC 05 - Build Time Substitutions",
                    depends_on=["Run-Pipeline"]),
     ])
-    
+
 DBAcademyHelper.monkey_patch(get_job_config)
 
 # COMMAND ----------
@@ -109,7 +97,7 @@ def create_job(self):
     client = DBAcademyRestClient()
 
     config = self.get_job_config()
-    print(f"Creating the job {config.job_name}")
+    print(f"Creating the job \"{config.job_name}\"")
 
     # Delete the existing pipeline if it exists
     client.jobs().delete_by_name(config.job_name, success_only=False)
@@ -180,7 +168,7 @@ def start_job(self):
     response = client.runs().wait_for(run_id)
     
     state = response.get("state").get("life_cycle_state")
-    assert state in ["TERMINATED", "INTERNAL_ERROR", "SKIPPED"], f"Expected final state: {state}"
+    assert state not in ["INTERNAL_ERROR", "SKIPPED"], f"Unexpected final state: {state}"
 
 DBAcademyHelper.monkey_patch(start_job)
 

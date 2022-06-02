@@ -72,7 +72,10 @@ DA.enumerate_remote_datasets()
 
 # COMMAND ----------
 
-dbutils.fs.rm(f"{DA.hidden.datasets}/customers/00.json")
+# This line is commented out only to avoid side effects when under test.
+# Feel free to uncomment it, delete the file, and then repair it in the next cell.
+# dbutils.fs.rm(f"{DA.hidden.datasets}/customers/00.json")
+
 files = dbutils.fs.ls(f"{DA.hidden.datasets}/customers")
 display(files)
 

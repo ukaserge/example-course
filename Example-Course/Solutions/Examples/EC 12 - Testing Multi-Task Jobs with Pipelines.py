@@ -26,8 +26,8 @@
 # COMMAND ----------
 
 # ANSWER
-# Make sure the pipeline exists before proceeding
-DA.create_pipeline()
+# Create pipeline just in case it doesn't exist.
+DA.create_pipeline(from_job=True)
 
 # COMMAND ----------
 

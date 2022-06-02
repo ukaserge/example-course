@@ -35,10 +35,6 @@ def get_job_config(self):
     job_name = f"da-{da_name}-{da_hash}-{self.course_code.lower()}: Example Job"
     
     return JobConfig(job_name, [
-        TaskConfig(name="DBAcademyHelper",
-                   resource_type="Notebook",
-                   resource=f"{base_path}/EC 02 - DBAcademyHelper"),
-        
         TaskConfig(name="Build-Directives",
                    resource_type="Notebook",
                    resource=f"{base_path}/EC 03 - Build Directives"),
@@ -46,7 +42,7 @@ def get_job_config(self):
         TaskConfig(name="Substitutions",
                    resource_type="Notebook",
                    resource=f"{base_path}/EC 05 - Build Time Substitutions",
-                   depends_on=["DBAcademyHelper", "Build-Directives"]),
+                   depends_on=["Build-Directives"]),
     ])
     
 DBAcademyHelper.monkey_patch(get_job_config)

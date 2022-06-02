@@ -3,6 +3,10 @@
 
 # COMMAND ----------
 
+# MAGIC %run ./_pipeline_config
+
+# COMMAND ----------
+
 # MAGIC %run ./_multi-task-jobs-with-piplines-config
 
 # COMMAND ----------

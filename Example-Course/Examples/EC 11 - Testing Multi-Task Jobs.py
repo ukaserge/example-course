@@ -59,6 +59,7 @@ DA.print_job_config()
 # MAGIC     1. In the field **Policy**, select **Unrestricted**
 # MAGIC     1. In the field **Cluster mode**, select **Single node**
 # MAGIC     1. In the field **Databricks runtime version** select the latest Photon LTS.
+# MAGIC     1. Optionally check **Use Photon Acceleration**.
 # MAGIC     1. In the field **Autopilot options** uncheck **Enable autoscaling local storage**
 # MAGIC     1. In the field **Node type**, select the cloud-specific type:
 # MAGIC         - AWS: **i3.xlarge**

@@ -53,29 +53,34 @@ class DataFactory:
 # COMMAND ----------
 
 class PipelineConfig():
-    def __init__(self, name, source, notebooks):
-        self.name = name            # The name of the pipeline
-        self.source = source        # Custom Property
-        self.notebooks = notebooks  # This list of notebooks for this pipeline
+    def __init__(self, pipeline_name, source, notebooks):
+        self.pipeline_name = pipeline_name # The name of the pipeline
+        self.source = source               # Custom Property
+        self.notebooks = notebooks         # This list of notebooks for this pipeline
 
 # COMMAND ----------
 
-def get_pipeline_config(self):
+def get_pipeline_config(self, from_job=False):
     """
     Returns the configuration to be used by the student in configuring the pipeline.
     """
-    path = dbutils.entry_point.getDbutils().notebook().getContext().notebookPath().getOrElse(None)
-    path = "/".join(path.split("/")[:-1])
-
+    base_path = dbutils.entry_point.getDbutils().notebook().getContext().notebookPath().getOrElse(None)
+    base_path = "/".join(base_path.split("/")[:-1])
+    
     da_name, da_hash = DA.get_username_hash()
-    pipeline_name = f"da-{da_name}-{da_hash}-{DA.course_code.lower()}"
-    if DA.lesson is None: pipeline_name += f-"{DA.lesson}"
+    pipeline_name = f"da-{da_name}-{da_hash}-{self.course_code.lower()}"
+    if DA.clean_lesson is not None: pipeline_name += f"-{DA.clean_lesson}"
     pipeline_name += ": Example Pipeline"
     
+    try:
+        # From a job or the pipline was pre-created
+        if from_job or DA.pipeline_id: pipeline_name += " from Job"
+    except: pass # ignore any errors
+    
     return PipelineConfig(pipeline_name, self.paths.stream_source, [
-        f"{path}/EC 10.B - Pipelines/EC 10.B.1 - Orders Pipeline",
-        f"{path}/EC 10.B - Pipelines/EC 10.B.2 - Customers Pipeline",
-        f"{path}/EC 10.B - Pipelines/EC 10.B.3 - Status Pipeline",
+        f"{base_path}/EC 10.B - Pipelines/EC 10.B.1 - Orders Pipeline",
+        f"{base_path}/EC 10.B - Pipelines/EC 10.B.2 - Customers Pipeline",
+        f"{base_path}/EC 10.B - Pipelines/EC 10.B.3 - Status Pipeline",
     ])
 
 DBAcademyHelper.monkey_patch(get_pipeline_config)
@@ -87,13 +92,13 @@ def print_pipeline_config(self):
     Renders the configuration of the pipeline as HTML
     """
     config = self.get_pipeline_config()
-
+    
     width = "600px"
     
     html = f"""<table style="width:100%">
     <tr>
         <td style="white-space:nowrap; width:1em">Pipeline Name:</td>
-        <td><input type="text" value="{config.name}" style="width: {width}"></td></tr>
+        <td><input type="text" value="{config.pipeline_name}" style="width: {width}"></td></tr>
     <tr>
         <td style="white-space:nowrap; width:1em">Source:</td>
         <td><input type="text" value="{config.source}" style="width: {width}"></td></tr>
@@ -119,7 +124,7 @@ DBAcademyHelper.monkey_patch(print_pipeline_config)
 
 # COMMAND ----------
 
-def create_pipeline(self):
+def create_pipeline(self, from_job=False):
     """
     Creates the prescribed pipline.
     """
@@ -127,20 +132,24 @@ def create_pipeline(self):
     from dbacademy.dbrest import DBAcademyRestClient
     client = DBAcademyRestClient()
 
-    config = self.get_pipeline_config()
-    print(f"Creating the pipeline \"{config.name}\"")
+    config = self.get_pipeline_config(from_job)
+    print(f"Creating the pipeline \"{config.pipeline_name}\"")
 
     # Delete the existing pipeline if it exists
-    client.pipelines().delete_by_name(config.name)
+    client.pipelines().delete_by_name(config.pipeline_name)
 
     # Create the new pipeline
     pipeline = client.pipelines().create(
-        name = config.name, 
+        name = config.pipeline_name, 
+        development=True,
         storage = self.paths.storage_location, 
         target = self.db_name, 
         notebooks = config.notebooks,
-        configuration = {"source": config.source})
-
+        configuration = {
+            "source": config.source,
+            "pipelines.applyChangesPreviewEnabled": True
+        })
+    
     self.pipeline_id = pipeline.get("pipeline_id")
        
 DBAcademyHelper.monkey_patch(create_pipeline)

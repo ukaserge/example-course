@@ -61,7 +61,7 @@ class Paths():
         for key in self.__dict__: 
             max_key_len = len(key) if len(key) > max_key_len else max_key_len
         for key in self.__dict__:
-            label = f"{padding}DA.paths.{key}:"
+            label = f"{padding}self.paths.{key}:"
             print(label.ljust(max_key_len+13) + self.__dict__[key])
         
     def __repr__(self):
@@ -118,16 +118,17 @@ class DBAcademyHelper():
         working_dir_root = f"dbfs:/mnt/dbacademy-users/{self.username}/{self.course_code}"
 
         if self.lesson is None:
+            self.clean_lesson = None
             working_dir = working_dir_root         # No lesson, working dir is same as root
             self.paths = Paths(working_dir, None)  # Create the "visible" path
             self.hidden = Paths(working_dir, None) # Create the "hidden" path
             self.db_name = self.db_name_prefix     # No lesson, database name is the same as prefix
         else:
-            clean_lesson = re.sub("[^a-zA-Z0-9]", "_", self.lesson) # Replace all special characters with underscores
-            working_dir = f"{working_dir_root}/{self.lesson}"       # Working directory now includes the lesson name
-            self.paths = Paths(working_dir, clean_lesson)           # Create the "visible" path
-            self.hidden = Paths(working_dir, clean_lesson)          # Create the "hidden" path
-            self.db_name = f"{self.db_name_prefix}_{clean_lesson}"  # Database name includes the lesson name
+            working_dir = f"{working_dir_root}/{self.lesson}"                     # Working directory now includes the lesson name
+            self.clean_lesson = re.sub("[^a-zA-Z0-9]", "_", self.lesson.lower())  # Replace all special characters with underscores
+            self.paths = Paths(working_dir, self.clean_lesson)                    # Create the "visible" path
+            self.hidden = Paths(working_dir, self.clean_lesson)                   # Create the "hidden" path
+            self.db_name = f"{self.db_name_prefix}_{self.clean_lesson}"           # Database name includes the lesson name
 
         # Register the working directory root to the hidden set of paths
         self.hidden.working_dir_root = working_dir_root
