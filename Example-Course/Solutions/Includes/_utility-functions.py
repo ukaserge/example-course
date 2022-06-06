@@ -321,7 +321,9 @@ def list_r(self, path, prefix=None, results=None):
     if prefix is None: prefix = path
     if results is None: results = list()
     
-    files = dbutils.fs.ls(path)
+    try: files = dbutils.fs.ls(path)
+    except: files = []
+    
     for file in files:
         data = file.path[len(prefix):]
         results.append(data)
