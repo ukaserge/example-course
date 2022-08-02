@@ -4,8 +4,7 @@
 # COMMAND ----------
 
 # Defined here because it is used only by this lesson
-# Not bound to DA and prefixed with an underscore to hide from the student.
-def _create_magic_table():
+def create_magic_table(self):
     """
     This is a sample utility method that creates a table and insert some data. Because this is not user-facing, we do not monkey-patch it into DBAcademyHelper
     """
@@ -19,15 +18,17 @@ LOCATION '{DA.paths.magic_tbl}'
     spark.sql("INSERT INTO magic VALUES (1, 'moo')")
     spark.sql("INSERT INTO magic VALUES (2, 'baa')")
     spark.sql("INSERT INTO magic VALUES (3, 'wolf')")
+    
+DBAcademyHelper.monkey_patch(create_magic_table)
 
 # COMMAND ----------
 
-DA = DBAcademyHelper()      # Create the DA object with the specified lesson
-DA.cleanup(validate=False)  # Remove the existing database and files
-DA.init(create_db=True)     # True is the default
-DA.install_datasets()       # Install (if necissary) and validate the datasets
+DA = DBAcademyHelper(**helper_arguments) # Create the DA object
+DA.reset_environment()                   # Reset by removing databases and files from other lessons
+DA.init(install_datasets=True,           # Initialize, install and validate the datasets
+        create_db=True)                  # Continue initialization, create the user-db
 
-_create_magic_table()       # A lesson-specific utility method to create and load a table.
+DA.create_magic_table()                  # Custom utility method to create the "magic" table
 
-DA.conclude_setup()         # Conclude the setup by printing the DA object's final state
+DA.conclude_setup()                      # Conclude setup by advertising environmental changes
 

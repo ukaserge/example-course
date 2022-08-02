@@ -12,20 +12,16 @@
 # MAGIC 
 # MAGIC * Name: **Example Course**
 # MAGIC * Version:  **1.0.0**
-# MAGIC * Built On: **Jul 28, 2022 at 23:29:39 UTC**
+# MAGIC * Built On: **Aug 2, 2022 at 17:50:26 UTC**
 
 # COMMAND ----------
 
 # MAGIC %md
-# MAGIC Run the following two commands to compute and print additional information about this course including details on the copyrights of each dataset.
+# MAGIC Run the following cell for additional information on this course's datasets, and their copyrights.
 
 # COMMAND ----------
 
-# MAGIC %run ./Includes/Additional-Information
-
-# COMMAND ----------
-
-DA.print_copyrights()
+# MAGIC %run ./Includes/Print-Dataset-Copyrights
 
 # COMMAND ----------
 

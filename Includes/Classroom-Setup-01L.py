@@ -3,9 +3,9 @@
 
 # COMMAND ----------
 
-DA = DBAcademyHelper()      # Create the DA object with the specified lesson
-DA.cleanup(validate=False)  # Remove the existing database and files
-DA.init(create_db=True)     # True is the default
-DA.install_datasets()       # Install (if necissary) and validate the datasets
-DA.conclude_setup()         # Conclude the setup by printing the DA object's final state
+DA = DBAcademyHelper(**helper_arguments) # Create the DA object
+DA.reset_environment()                   # Reset by removing databases and files from other lessons
+DA.init(install_datasets=True,           # Initialize, install and validate the datasets
+        create_db=True)                  # Continue initialization, create the user-db
+DA.conclude_setup()                      # Conclude setup by advertising environmental changes
 

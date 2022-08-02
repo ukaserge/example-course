@@ -36,15 +36,9 @@
 # MAGIC 
 # MAGIC ### Install Datasets
 # MAGIC 
-# MAGIC Next, we need to "install" the datasets this course uses by copying them from their current location in the cloud to a location relative to your workspace.
+# MAGIC Installation of the datasets is no longer an explicit action and instad is handled in the `Classroom-Setup` scripts.
 # MAGIC 
-# MAGIC All that is required is to run the following cell.
-# MAGIC 
-# MAGIC By default, the **`install_datasets()`** function will not reinstall the datasets upon re-invocation but this behavior can be changed by setting **`reinstall`** equal to **`True`**
-
-# COMMAND ----------
-
-DA.install_datasets(reinstall=False)
+# MAGIC Beyond that, the ideal pattern is to install the datasets in the `Workspace-Setup` once for the entire class.
 
 # COMMAND ----------
 
@@ -63,7 +57,7 @@ DA.install_datasets(reinstall=False)
 print(f"Username:          {DA.username}")
 print(f"Database Name:     {DA.db_name}")
 print(f"Working Directory: {DA.paths.working_dir}")
-print(f"User DB Locatin:   {DA.paths.user_db}")
+print(f"User DB Location:  {DA.paths.user_db}")
 
 # COMMAND ----------
 

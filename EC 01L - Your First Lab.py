@@ -66,7 +66,9 @@ assert actual == 42, f"Expected the function some_function() to return 42, found
 # MAGIC ## What if the test fails?
 # MAGIC By design, we expect the following cell to fail. This will demonstrate two things:
 # MAGIC * How test failures can be reviewd after a smoke-test failure
-# MAGIC * How to configure for expected failures (e.g. unsupported on GCP). To see this configuration, review the notebook **/Build-Scripts/Publish-All** which contains the configuration used by **/Build-Scripts/Test-All-Published**
+# MAGIC * How to configure for expected failures (e.g. unsupported on GCP).
+# MAGIC 
+# MAGIC To see this configuration, review the notebook **/Build-Scripts/Publish-All** which contains the configuration used by **/Build-Scripts/Test-All-Published**
 
 # COMMAND ----------
 
