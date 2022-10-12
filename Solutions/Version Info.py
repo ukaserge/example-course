@@ -12,7 +12,7 @@
 # MAGIC 
 # MAGIC * Name: **Example Course**
 # MAGIC * Version:  **1.1.0**
-# MAGIC * Built On: **Oct 12, 2022 at 19:19:09 UTC**
+# MAGIC * Built On: **Oct 12, 2022 at 19:25:16 UTC**
 
 # COMMAND ----------
 
