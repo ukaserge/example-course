@@ -24,13 +24,13 @@
 # MAGIC 1. Move your datasets and copyrights to the local workspace in **`dbfs/mnt/dbacademy-datasets/example-course/v01`**, for example.
 # MAGIC     * **WARNING** As you develop your course, make sure to treate datasets in this directory as read-only as it is used by all students in the workspace.
 # MAGIC 1. Because this is where your datasets will be installed to, you can start development of the course and datasets without worrying about publishing just yet.
-# MAGIC 1. Enumerate the local datasets to create a list of files used in validating the install. For this purpose you can call use **`DA.enumerate_local_datasets()`**
-# MAGIC 1. Update the enumeration in the **[_utility-functions]($../Includes/_utility-functions)** notebook, **Cmd 4**.
+# MAGIC 1. Enumerate the local datasets to create a list of files used in validating the install. For this purpose you can call use **`DA.dev.enumerate_local_datasets()`**
+# MAGIC 1. Update the enumeration in the **[_common]($../Includes/_common)** notebook, **Cmd 4**.
 # MAGIC 
 # MAGIC ## Publishing Dataset
 # MAGIC 1. Load the data into the Azure data repository.
-# MAGIC 1. Enumerate the remote datasets to create a list of files used in validating the install. For this purpose you can call use **`DA.enumerate_remote_datasets()`**
-# MAGIC 1. Update the enumeration in the **[_utility-functions]($../Includes/_utility-functions)** notebook, **Cmd 4**.
+# MAGIC 1. Enumerate the remote datasets to create a list of files used in validating the install. For this purpose you can call use **`DA.dev.enumerate_remote_datasets()`**
+# MAGIC 1. Update the enumeration in the **[_common]($../Includes/_common)** notebook, **Cmd 4**.
 # MAGIC 1. Deleting all local files from **`dbfs/mnt/dbacademy-datasets/example-course/v01`**, for example.
 # MAGIC 1. Test the install by rerunning **`DA.install_datasets()`**
 
@@ -51,7 +51,7 @@
 
 # COMMAND ----------
 
-DA.enumerate_local_datasets()
+DA.dev.enumerate_local_datasets()
 
 # COMMAND ----------
 
@@ -60,7 +60,7 @@ DA.enumerate_local_datasets()
 
 # COMMAND ----------
 
-DA.enumerate_remote_datasets()
+DA.dev.enumerate_remote_datasets()
 
 # COMMAND ----------
 
@@ -72,11 +72,11 @@ DA.enumerate_remote_datasets()
 
 # COMMAND ----------
 
-# This line is commented out only to avoid side effects when under test.
+# This line is commented out only to avoid side effects when under test asyncronously.
 # Feel free to uncomment it, delete the file, and then repair it in the next cell.
-# dbutils.fs.rm(f"{DA.paths.datasets}/customers/00.json")
+# dbutils.fs.rm(f"{DA.paths.datasets}/sales/customers/00.json")
 
-files = dbutils.fs.ls(f"{DA.paths.datasets}/customers")
+files = dbutils.fs.ls(f"{DA.paths.datasets}/sales/customers")
 display(files)
 
 # COMMAND ----------

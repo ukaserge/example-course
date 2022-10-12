@@ -1,11 +1,10 @@
 # Databricks notebook source
-# MAGIC %run ./_utility-functions
+# MAGIC %run ./_common
 
 # COMMAND ----------
 
 # Define only so that we can reference known variables, 
 # not actually invoking anything other functions.
-from dbacademy.dbhelper import DBAcademyHelper, Paths
 DA = DBAcademyHelper(**helper_arguments)
 
 # Install the datasets, but don't forece a reinstall so as

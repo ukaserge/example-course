@@ -55,7 +55,7 @@
 # COMMAND ----------
 
 print(f"Username:          {DA.username}")
-print(f"Database Name:     {DA.db_name}")
+print(f"Schema Name:       {DA.schema_name}")
 print(f"Working Directory: {DA.paths.working_dir}")
 print(f"User DB Location:  {DA.paths.user_db}")
 

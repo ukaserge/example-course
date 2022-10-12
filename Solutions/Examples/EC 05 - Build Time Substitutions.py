@@ -27,11 +27,11 @@
 # MAGIC <pre>
 # MAGIC * cloud: AWS
 # MAGIC * username: jacob.parr@databricks.com
-# MAGIC * spark_version: 10.4.x-scala2.12
+# MAGIC * spark_version: 11.3.x-scala2.12
 # MAGIC * instance_pool_id: 1117-212409-soars13-pool-6plxsi6q
-# MAGIC * host_name: 1117-212444-7o693v9s-10-141-227-57
+# MAGIC * host_name: cons-webapp-9
 # MAGIC * username: jacob.parr@databricks.com
-# MAGIC * notebook_path: /Repos/Examples/example-course-source/Build-Scripts/Publish-All
+# MAGIC * notebook_path: /Repos/Examples/example-course-source/Build-Scripts/03-Publish-Assets
 # MAGIC * notebook_dir: /Repos/Examples/example-course-source/Build-Scripts
 # MAGIC * api_endpoint: https://oregon.cloud.databricks.com
 # MAGIC </pre>  

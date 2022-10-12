@@ -12,7 +12,7 @@ class DataFactory:
         # Bind the stream-source to DA because we will use it again later.
         DA.paths.stream_source = f"{DA.paths.working_dir}/stream-source"
         
-        self.source_dir = DA.paths.datasets
+        self.source_dir = f"{DA.paths.datasets}/sales"
         self.target_dir = DA.paths.stream_source
         
         # All three datasets *should* have the same count, but just in case,
@@ -57,6 +57,13 @@ class PipelineConfig():
         self.pipeline_name = pipeline_name # The name of the pipeline
         self.source = source               # Custom Property
         self.notebooks = notebooks         # This list of notebooks for this pipeline
+    
+    def __repr__(self):
+        content = f"Name:      {self.pipeline_name}\nSource:    {self.source}\n"""
+        content += f"Notebooks: {self.notebooks.pop(0)}"
+        for notebook in self.notebooks: content += f"\n           {notebook}"
+        return content
+
 
 # COMMAND ----------
 

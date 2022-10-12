@@ -16,16 +16,12 @@
 
 # COMMAND ----------
 
-# MAGIC %pip install \
-# MAGIC git+https://github.com/databricks-academy/dbacademy-gems \
-# MAGIC git+https://github.com/databricks-academy/dbacademy-rest \
-# MAGIC git+https://github.com/databricks-academy/dbacademy-courseware \
-# MAGIC --quiet --disable-pip-version-check
+# MAGIC %pip install git+https://github.com/databricks-academy/dbacademy@main --quiet --disable-pip-version-check
 
 # COMMAND ----------
 
-from dbacademy import dbpublish
-html = dbpublish.help_html()
+from dbacademy_courseware import help_html
+html = help_html()
 displayHTML(html)
 
 # COMMAND ----------

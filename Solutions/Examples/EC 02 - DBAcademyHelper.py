@@ -21,7 +21,9 @@
 
 # MAGIC %md
 # MAGIC 
-# MAGIC The "standard" classroom setup uses the **`DBAcademyHelper`** to provide consistency in the setup of each lesson. Reviewing the cell above, you can see several key points:
+# MAGIC The "standard" classroom setup uses the **`DBAcademyHelper`** to provide consistency in the setup of each lesson. 
+# MAGIC 
+# MAGIC Reviewing the cell above, you can see several key points:
 # MAGIC * The datasets are installed (or not installed if already present)
 # MAGIC * The datasets are validated to ensure they were installed correctly
 # MAGIC * May include some misc output for longer, lesson-specific, initialization.
@@ -43,7 +45,7 @@ print(DA)
 
 # MAGIC %md
 # MAGIC 
-# MAGIC You can various attributes as seen in the following cell.
+# MAGIC You can use various attributes as seen in the following cell.
 # MAGIC 
 # MAGIC Those attributes attached to the the **`DA.paths`** object are advertised in the call to the Classroom-Setup script as seen above.
 # MAGIC 
@@ -69,10 +71,10 @@ print(f"DA.paths.magic_tbl:   {DA.paths.magic_tbl}")
 
 # MAGIC %sql
 # MAGIC SELECT 
-# MAGIC   '${da.db_name}' as db_name,
-# MAGIC   '${da.paths.working_dir}' as working_dir,
-# MAGIC   '${da.paths.user_db}' as user_db,
-# MAGIC   '${da.paths.magic_tbl}' as magic_tbl
+# MAGIC   '${DA.db_name}' as db_name,
+# MAGIC   '${DA.paths.working_dir}' as working_dir,
+# MAGIC   '${DA.paths.user_db}' as user_db,
+# MAGIC   '${DA.paths.magic_tbl}' as magic_tbl
 
 # COMMAND ----------
 
@@ -91,7 +93,15 @@ print(f"DA.paths.magic_tbl:   {DA.paths.magic_tbl}")
 
 # COMMAND ----------
 
-DA.install_datasets(reinstall=False)
+DA.install_datasets(reinstall_datasets=False)
+
+# COMMAND ----------
+
+# MAGIC %md So as to minimize the number of calls in the Classroom-Setup script, `DA.install_datasets()` is called automatically from `DA.init()` as seen here with its companion argument `create_db`:
+
+# COMMAND ----------
+
+DA.init(install_datasets=True, create_db=False)
 
 # COMMAND ----------
 
@@ -102,7 +112,7 @@ DA.install_datasets(reinstall=False)
 # COMMAND ----------
 
 # MAGIC %sql
-# MAGIC SELECT * FROM delta.`${da.paths.magic_tbl}`;
+# MAGIC SELECT * FROM delta.`${DA.paths.magic_tbl}`;
 
 # COMMAND ----------
 
@@ -123,7 +133,11 @@ DA.install_datasets(reinstall=False)
 # MAGIC * Stops all running streams
 # MAGIC * Drop any databases created in this lesson
 # MAGIC * Remove from DBFS, specifically from the user's working directory, any on-disk assets created in this lesson.
-# MAGIC 
+# MAGIC * Validates the locally installed, class-shared, datasets and attempts to repair them if necissary
+
+# COMMAND ----------
+
+# MAGIC %md 
 # MAGIC Run the following cell to delete the tables and files associated with this lesson.
 
 # COMMAND ----------
