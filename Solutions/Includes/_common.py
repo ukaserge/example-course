@@ -1,5 +1,7 @@
 # Databricks notebook source
-# MAGIC %pip install git+https://github.com/databricks-academy/dbacademy@main --quiet --disable-pip-version-check
+# MAGIC %pip install \
+# MAGIC git+https://github.com/databricks-academy/dbacademy@v1.0.2 \
+# MAGIC --quiet --disable-pip-version-check
 
 # COMMAND ----------
 
@@ -20,5 +22,15 @@ course_config = CourseConfig(course_code = "exmp",                  # The abbrev
                              install_min_time = "1 min",            # The minimum amount of time to install the datasets (e.g. from Oregon)
                              install_max_time = "5 min",            # The maximum amount of time to install the datasets (e.g. from India)
                              remote_files = remote_files,           # The enumerated list of files in the datasets
-                             supported_dbrs = ["11.3.x-scala2.12"])
+                             supported_dbrs = ["11.3.x-scala2.12", "11.3.x-photon-scala2.12", "11.3.x-cpu-ml-scala2.12"],
+                             expected_dbrs = "11.3.x-scala2.12, 11.3.x-photon-scala2.12, 11.3.x-cpu-ml-scala2.12")
+
+# Defined here for the majority of lessons, 
+# and later modified on a per-lesson basis.
+lesson_config = LessonConfig(name = None,                           # The name of the course - used to cary state between notebooks
+                             create_schema = True,                  # True if the user-specific schama (database) should be created
+                             create_catalog = False,                # Requires UC, but when True creates the user-specific catalog
+                             requires_uc = False,                   # Indicates if this course requires UC or not
+                             installing_datasets = True,            # Indicates that the datasets should be installed or not
+                             enable_streaming_support = False)      # Indicates that this lesson uses streaming (e.g. needs a checkpoint directory)
 

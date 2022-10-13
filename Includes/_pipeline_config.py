@@ -73,12 +73,9 @@ def get_pipeline_config(self, from_job=False):
     """
     base_path = dbutils.entry_point.getDbutils().notebook().getContext().notebookPath().getOrElse(None)
     base_path = "/".join(base_path.split("/")[:-1])
-    
-    da_name, da_hash = DA.get_username_hash()
-    pipeline_name = f"da-{da_name}-{da_hash}-{self.course_code.lower()}"
-    if DA.clean_lesson is not None: pipeline_name += f"-{DA.clean_lesson}"
-    pipeline_name += ": Example Pipeline"
-    
+
+    pipeline_name = f"{DA.unique_name}: Example Pipeline"
+
     try:
         # From a job or the pipline was pre-created
         if from_job or DA.pipeline_id: pipeline_name += " from Job"
@@ -111,7 +108,7 @@ def print_pipeline_config(self):
         <td><input type="text" value="{config.source}" style="width: {width}"></td></tr>
 
         <td style="white-space:nowrap; width:1em">Target:</td>
-        <td><input type="text" value="{self.db_name}" style="width: {width}"></td></tr>
+        <td><input type="text" value="{self.schema_name}" style="width: {width}"></td></tr>
     <tr>
         <td style="white-space:nowrap; width:1em">Storage Location:</td>
         <td><input type="text" value="{self.paths.storage_location}" style="width: {width}"></td></tr>
@@ -150,11 +147,10 @@ def create_pipeline(self, from_job=False):
         name = config.pipeline_name, 
         development=True,
         storage = self.paths.storage_location, 
-        target = self.db_name, 
+        target = self.schema_name,
         notebooks = config.notebooks,
         configuration = {
-            "source": config.source,
-            "pipelines.applyChangesPreviewEnabled": True
+            "source": config.source
         })
     
     self.pipeline_id = pipeline.get("pipeline_id")

@@ -20,7 +20,7 @@
 
 # COMMAND ----------
 
-from dbacademy_courseware import help_html
+from dbacademy.dbbuild import help_html
 html = help_html()
 displayHTML(html)
 

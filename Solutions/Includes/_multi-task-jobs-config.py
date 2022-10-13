@@ -33,8 +33,7 @@ def get_job_config(self):
     base_path = dbutils.entry_point.getDbutils().notebook().getContext().notebookPath().getOrElse(None)
     base_path = "/".join(base_path.split("/")[:-1])
     
-    da_name, da_hash = DA.get_username_hash()
-    job_name = f"da-{da_name}-{da_hash}-{self.course_code.lower()}: Example Job"
+    job_name = f"{DA.unique_name}: Example Job"
     
     return JobConfig(job_name, [
         TaskConfig(name="Build-Directives",
@@ -91,6 +90,7 @@ DBAcademyHelper.monkey_patch(print_job_config)
 
 # COMMAND ----------
 
+@DBAcademyHelper.monkey_patch
 def create_job(self):
     """
     Creates the prescribed job.
@@ -105,14 +105,12 @@ def create_job(self):
     # Delete the existing pipeline if it exists
     client.jobs().delete_by_name(config.job_name, success_only=False)
 
-    course_name = re.sub("[^a-zA-Z0-9]", "-", DA.course_name)
-    while "--" in course_name: course_name = course_name.replace("--", "-")
     
     params = {
         "name": f"{config.job_name}",
         "tags": {
-            "dbacademy.course": course_name,
-            "dbacademy.source": course_name
+            "dbacademy.course": self.course_config.build_name,
+            "dbacademy.source": self.course_config.build_name
         },
         "email_notifications": {},
         "timeout_seconds": 7200,
@@ -161,8 +159,6 @@ def create_job(self):
     json_response = client.jobs().create(params)
     self.job_id = json_response["job_id"]
     print(f"Created job {self.job_id}")
-
-DBAcademyHelper.monkey_patch(create_job)
 
 # COMMAND ----------
 

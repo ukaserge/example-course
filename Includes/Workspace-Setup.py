@@ -1,13 +1,117 @@
 # Databricks notebook source
+# MAGIC %md
+# MAGIC 
+# MAGIC # Workspace Setup
+# MAGIC This notebook should be run by instructors to prepare the workspace for a class.
+# MAGIC 
+# MAGIC The key changes this notebook makes includes:
+# MAGIC * Updating user-specific grants such that they can create databases/schemas against the current catalog when they are not workspace-admins.
+# MAGIC * Configures three cluster policies:
+# MAGIC     * **DBAcademy All-Purpose Policy** - which should be used on clusters running standard notebooks.
+# MAGIC     * **DBAcademy Jobs-Only Policy** - which should be used on workflows/jobs
+# MAGIC     * **DBAcademy DLT-Only Policy** - which should be used on DLT piplines (automatically applied)
+# MAGIC * Create or update the shared **Starter Warehouse** for use in Databricks SQL exercises
+# MAGIC * Create the Instance Pool **DBAcademy Pool** for use by students and the "student" and "jobs" policies.
+
+# COMMAND ----------
+
 # MAGIC %run ./_common
 
 # COMMAND ----------
 
-# Define only so that we can reference known variables, 
-# not actually invoking anything other functions.
-DA = DBAcademyHelper(**helper_arguments)
+import time
 
-# Install the datasets, but don't forece a reinstall so as
-# to keep it idempotent, but it will repair if issues are found.
-DA.install_datasets(reinstall_datasets=False)
+# Start a timer so we can benchmark execution duration.
+setup_start = int(time.time())
+
+# COMMAND ----------
+
+# MAGIC %md
+# MAGIC # Get Class Config
+# MAGIC The three variables defined by these widgets are used to configure our environment as a means of controlling class cost.
+
+# COMMAND ----------
+
+# Setup the widgets to collect required parameters.
+from dbacademy.dbhelper import WorkspaceHelper
+dbutils.widgets.dropdown("configure_for", WorkspaceHelper.ALL_USERS, [WorkspaceHelper.ALL_USERS], "Configure Workspace For")
+
+# students_count is the reasonable estiamte to the maximum number of students
+dbutils.widgets.text("students_count", "", "Number of Students")
+
+# event_name is the name assigned to this event/class or alternatively its class number
+dbutils.widgets.text("event_name", "", "Event Name/Class Number")
+
+# COMMAND ----------
+
+# MAGIC %md
+# MAGIC 
+# MAGIC # Init Script & Install Datasets
+# MAGIC The main affect of this call is to pre-install the datasets.
+# MAGIC 
+# MAGIC It has the side effect of create our DA object which includes our REST client.
+
+# COMMAND ----------
+
+lesson_config.create_schema = False                 # We don't need a schema when configuring the workspace
+
+DA = DBAcademyHelper(course_config, lesson_config)  # Create the DA object
+DA.reset_lesson()                                   # Reset the lesson to a clean state
+DA.init()                                           # Performs basic intialization including creating schemas and catalogs
+DA.conclude_setup()                                 # Finalizes the state and prints the config for the student
+
+# COMMAND ----------
+
+# MAGIC %md
+# MAGIC 
+# MAGIC ## Create Class Instance Pools
+# MAGIC The following cell configures the instance pool used for this class
+
+# COMMAND ----------
+
+instance_pool_id = DA.workspace.clusters.create_instance_pool()
+
+# COMMAND ----------
+
+# MAGIC %md
+# MAGIC 
+# MAGIC ## Create The Three Class-Specific Cluster Policies
+# MAGIC The following cells create the various cluster policies used by the class
+
+# COMMAND ----------
+
+DA.workspace.clusters.create_all_purpose_policy(instance_pool_id)
+DA.workspace.clusters.create_jobs_policy(instance_pool_id)
+DA.workspace.clusters.create_dlt_policy()
+None
+
+# COMMAND ----------
+
+# MAGIC %md
+# MAGIC 
+# MAGIC ## Create Class-Shared Databricks SQL Warehouse/Endpoint
+# MAGIC Creates a single wharehouse to be used by all students.
+# MAGIC 
+# MAGIC The configuration is derived from the number of students specified above.
+
+# COMMAND ----------
+
+DA.workspace.warehouses.create_shared_sql_warehouse(name="Starter Warehouse")
+
+# COMMAND ----------
+
+# MAGIC %md
+# MAGIC 
+# MAGIC ## Configure User Entitlements
+# MAGIC 
+# MAGIC This task simply adds the "**databricks-sql-access**" entitlement to the "**users**" group ensuring that they can access the Databricks SQL view.
+
+# COMMAND ----------
+
+DA.workspace.add_entitlement_workspace_access()
+DA.workspace.add_entitlement_databricks_sql_access()
+
+# COMMAND ----------
+
+print(f"Setup completed {DA.clock_stopped(setup_start)}")
 

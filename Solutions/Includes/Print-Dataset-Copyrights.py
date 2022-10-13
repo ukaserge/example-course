@@ -3,10 +3,8 @@
 
 # COMMAND ----------
 
-DA = DBAcademyHelper(**helper_arguments)
-DA.init(install_datasets=True, create_db=False)
+lesson_config.create_schema = False                 # We don't need a schema when simply printing the copyrights
 
-# COMMAND ----------
-
-DA.print_copyrights()
+DA = DBAcademyHelper(course_config, lesson_config)  # Create the DA object
+DA.print_copyrights()                               # Once initialized, just print the copyrights
 

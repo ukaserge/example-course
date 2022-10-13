@@ -49,11 +49,11 @@ print(DA)
 # MAGIC 
 # MAGIC Those attributes attached to the the **`DA.paths`** object are advertised in the call to the Classroom-Setup script as seen above.
 # MAGIC 
-# MAGIC Attributes and functions attached directly to the **`DA`** object are not advertised, such as **`DA.db_name`** seen in the following cell. However, it should be obvious to all users that it is provided by the helper object. That it is not a Databricks or Spark API, but specific to this courseare and Databricks Academy.
+# MAGIC Attributes and functions attached directly to the **`DA`** object are not advertised, such as **`DA.schema_name`** seen in the following cell. However, it should be obvious to all users that it is provided by the helper object. That it is not a Databricks or Spark API, but specific to this courseare and Databricks Academy.
 
 # COMMAND ----------
 
-print(f"DA.db_name:           {DA.db_name}")
+print(f"DA.schema_name:           {DA.schema_name}")
 print("-"*80)
 print(f"DA.paths.user_db:     {DA.paths.user_db}")
 print(f"DA.paths.working_dir: {DA.paths.working_dir}")
@@ -63,7 +63,7 @@ print(f"DA.paths.magic_tbl:   {DA.paths.magic_tbl}")
 
 # MAGIC %md
 # MAGIC 
-# MAGIC The **`DA.paths`** values, and some select values attached to the **`DA`** instance (such as **`DA.db_name`**), are also injected into the context making them available in SQL commands as seen in the following cell. You can inject additional values in the method **`DA.conclude_setup()`**.
+# MAGIC The **`DA.paths`** values, and some select values attached to the **`DA`** instance (such as **`DA.schema_name`**), are also injected into the context making them available in SQL commands as seen in the following cell. You can inject additional values in the method **`DA.conclude_setup()`**.
 # MAGIC 
 # MAGIC This can be really helpful when we need to reference a dataset in a SQL statement.
 
@@ -71,7 +71,7 @@ print(f"DA.paths.magic_tbl:   {DA.paths.magic_tbl}")
 
 # MAGIC %sql
 # MAGIC SELECT 
-# MAGIC   '${DA.db_name}' as db_name,
+# MAGIC   '${DA.schema_name}' as schema_name,
 # MAGIC   '${DA.paths.working_dir}' as working_dir,
 # MAGIC   '${DA.paths.user_db}' as user_db,
 # MAGIC   '${DA.paths.magic_tbl}' as magic_tbl
@@ -101,7 +101,7 @@ DA.install_datasets(reinstall_datasets=False)
 
 # COMMAND ----------
 
-DA.init(install_datasets=True, create_db=False)
+DA.init()
 
 # COMMAND ----------
 
