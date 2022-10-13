@@ -11,8 +11,8 @@
 # MAGIC # Project Information
 # MAGIC 
 # MAGIC * Name: **Example Course**
-# MAGIC * Version:  **1.1.1**
-# MAGIC * Built On: **Oct 13, 2022 at 19:03:58 UTC**
+# MAGIC * Version:  **1.1.2**
+# MAGIC * Built On: **Oct 13, 2022 at 21:19:37 UTC**
 
 # COMMAND ----------
 
