@@ -32,15 +32,17 @@ setup_start = int(time.time())
 
 # COMMAND ----------
 
-# Setup the widgets to collect required parameters.
 from dbacademy.dbhelper import WorkspaceHelper
-dbutils.widgets.dropdown("configure_for", WorkspaceHelper.ALL_USERS, [WorkspaceHelper.ALL_USERS], "Configure Workspace For")
 
-# students_count is the reasonable estiamte to the maximum number of students
-dbutils.widgets.text("students_count", "", "Number of Students")
+# Setup the widgets to collect required parameters.
+dbutils.widgets.dropdown(WorkspaceHelper.PARAM_CONFIGURE_FOR, "", 
+                         WorkspaceHelper.CONFIGURE_FOR_OPTIONS, "Configure Workspace For")
 
-# event_name is the name assigned to this event/class or alternatively its class number
-dbutils.widgets.text("event_name", "", "Event Name/Class Number")
+# lab_id is the name assigned to this event/class or alternatively its class number
+dbutils.widgets.text(WorkspaceHelper.PARAM_LAB_ID, "", "Lab/Class ID")
+
+# a general purpose description of the class
+dbutils.widgets.text(WorkspaceHelper.PARAM_DESCRIPTION, "", "Description")
 
 # COMMAND ----------
 
