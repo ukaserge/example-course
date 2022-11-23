@@ -26,11 +26,11 @@
 # MAGIC We are not really doing anything special here short of documenting how to use replacements and showing off dbgems
 # MAGIC <pre>
 # MAGIC * cloud: AWS
-# MAGIC * username: jacob.parr@databricks.com
+# MAGIC * username: juno.lee@databricks.com
 # MAGIC * spark_version: 11.3.x-scala2.12
 # MAGIC * instance_pool_id: 1117-212409-soars13-pool-6plxsi6q
-# MAGIC * host_name: cons-webapp-5
-# MAGIC * username: jacob.parr@databricks.com
+# MAGIC * host_name: cons-webapp-1
+# MAGIC * username: juno.lee@databricks.com
 # MAGIC * notebook_path: /Repos/Examples/example-course-source/Build-Scripts/03-Publish-Assets
 # MAGIC * notebook_dir: /Repos/Examples/example-course-source/Build-Scripts
 # MAGIC * api_endpoint: https://oregon.cloud.databricks.com

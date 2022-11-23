@@ -19,10 +19,8 @@
 
 # COMMAND ----------
 
-import time
-
 # Start a timer so we can benchmark execution duration.
-setup_start = int(time.time())
+setup_start = dbgems.clock_start()
 
 # COMMAND ----------
 
@@ -36,13 +34,13 @@ from dbacademy.dbhelper import WorkspaceHelper
 
 # Setup the widgets to collect required parameters.
 dbutils.widgets.dropdown(WorkspaceHelper.PARAM_CONFIGURE_FOR, "", 
-                         WorkspaceHelper.CONFIGURE_FOR_OPTIONS, "Configure Workspace For")
+                         WorkspaceHelper.CONFIGURE_FOR_OPTIONS, "Configure For (required)")
 
 # lab_id is the name assigned to this event/class or alternatively its class number
-dbutils.widgets.text(WorkspaceHelper.PARAM_LAB_ID, "", "Lab/Class ID")
+dbutils.widgets.text(WorkspaceHelper.PARAM_LAB_ID, "", "Lab/Class ID (optional)")
 
 # a general purpose description of the class
-dbutils.widgets.text(WorkspaceHelper.PARAM_DESCRIPTION, "", "Description")
+dbutils.widgets.text(WorkspaceHelper.PARAM_DESCRIPTION, "", "Description (optional)")
 
 # COMMAND ----------
 
@@ -115,5 +113,5 @@ DA.workspace.add_entitlement_databricks_sql_access()
 
 # COMMAND ----------
 
-print(f"Setup completed {DA.clock_stopped(setup_start)}")
+print(f"Setup completed {dbgems.clock_stopped(setup_start)}")
 
