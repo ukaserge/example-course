@@ -13,7 +13,17 @@ def __validate_libraries():
 
 def __install_libraries():
     global pip_command
-    version = spark.conf.get("dbacademy.library.version", "main")
+    
+    specified_version = f"v3.0.2"
+    key = "dbacademy.library.version"
+    version = spark.conf.get(key, specified_version)
+
+    if specified_version != version:
+        print("** Dependency Version Overridden *******************************************************************")
+        print(f"* This course was built for {specified_version} of the DBAcademy Library, but it is being overridden via the Spark")
+        print(f"* configuration variable \"{key}\". The use of version v3.0.2 is not advised as we")
+        print(f"* cannot guarantee compatibility with this version of the course.")
+        print("****************************************************************************************************")
 
     try:
         from dbacademy import dbgems  
@@ -74,5 +84,6 @@ lesson_config = LessonConfig(name = None,                           # The name o
                              create_catalog = False,                # Requires UC, but when True creates the user-specific catalog
                              requires_uc = False,                   # Indicates if this course requires UC or not
                              installing_datasets = True,            # Indicates that the datasets should be installed or not
-                             enable_streaming_support = False)      # Indicates that this lesson uses streaming (e.g. needs a checkpoint directory)
+                             enable_streaming_support = False,      # Indicates that this lesson uses streaming (e.g. needs a checkpoint directory)
+                             enable_ml_support = True)              # Indicates that this lesson requires additonal ML support
 
