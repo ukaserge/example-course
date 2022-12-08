@@ -29,7 +29,7 @@
 # MAGIC * username: jacob.parr@databricks.com
 # MAGIC * spark_version: 11.3.x-scala2.12
 # MAGIC * instance_pool_id: 1117-212409-soars13-pool-6plxsi6q
-# MAGIC * host_name: cons-webapp-2
+# MAGIC * host_name: cons-webapp-6
 # MAGIC * username: jacob.parr@databricks.com
 # MAGIC * notebook_path: /Repos/Examples/example-course-source/Build-Scripts/03-Publish-Assets
 # MAGIC * notebook_dir: /Repos/Examples/example-course-source/Build-Scripts
